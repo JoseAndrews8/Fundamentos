@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float Digito, digito, suma, resta, multiplicacion, division;
+    cout<<"Calculadora"<<endl;
+    cout<<"Ingresar digito 1: ";
+    cin>>Digito;
+    cout<<"Ingresar digito 2: ";
+    cin>>digito;
+    suma = Digito + Digito ;
+    resta = Digito - digito ;
+    multiplicacion = Digito * digito ;
+    division = Digito / digito;
+    cout<<"---------------------------------------"<<endl;
+    cout<<"Suma: "<< suma<< endl;
+    cout<<"Resta: "<< resta<< endl;
+    cout<<"Multiplicacion: "<< multiplicacion<< endl;
+    cout<<"Division: "<< division<< endl;
+    cout<<"----------------------------------------"<<endl;
+
+    return 0;
+}
