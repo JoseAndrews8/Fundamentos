@@ -1,0 +1,24 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    float capital, tiempo, tasainteres, resultado;
+    cout<<"--------------------------------"<<endl;
+    cout<<"Calculadora de Interes Compuesto"<<endl;
+    cout<<"--------------------------------"<<endl;
+    cout<<"Insertar el Capital Inicial: "<<endl;
+    cin>> capital;
+    cout<<"Insertar la Tasa de Interes: "<<endl;
+    cin>> tasainteres;
+    cout<<"Insertar el tiempo: "<<endl;
+    cin>> tiempo;
+    resultado = pow(1+tasainteres,tiempo)*capital;
+    cout<<"--------------------------------"<<endl;
+    cout<<"El resultado es: "<<resultado<<endl;
+    cout<<"--------------------------------";
+
+    return 0;
+}
