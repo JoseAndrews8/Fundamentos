@@ -8,12 +8,14 @@ int main()
     cout<<"============================="<<endl;
     cout<<"Adicion"<<endl;
     cout<<"============================="<<endl;
-    cout<<"Insertar Primer Digito:  "<<endl;
+    cout<<"Insertar Primer Digito:  ";
     cin>>Digito1;
-    cout<<"Insertar Segundo Digito:  "<<endl;
+    cout<<"Insertar Segundo Digito:  ";
     cin>>Digito2;
     suma = Digito1 + Digito2;
-    cout<<"El resultado es: "<<suma;
+    cout<<"-----------------------------"<<endl;
+    cout<<"El resultado es: "<<suma<<endl;
+    cout<<"-----------------------------"<<endl;
 
     return 0;
 }
