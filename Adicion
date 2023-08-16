@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float Digito1, Digito2, suma;
+    cout<<"============================="<<endl;
+    cout<<"Adicion"<<endl;
+    cout<<"============================="<<endl;
+    cout<<"Insertar Primer Digito:  "<<endl;
+    cin>>Digito1;
+    cout<<"Insertar Segundo Digito:  "<<endl;
+    cin>>Digito2;
+    suma = Digito1 + Digito2;
+    cout<<"El resultado es: "<<suma;
+
+    return 0;
+}
