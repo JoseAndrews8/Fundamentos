@@ -6,19 +6,23 @@ using namespace std;
 int main()
 {
     float capital, tiempo, tasainteres, resultado;
-    cout<<"--------------------------------"<<endl;
-    cout<<"Calculadora de Interes Compuesto"<<endl;
-    cout<<"--------------------------------"<<endl;
-    cout<<"Insertar el Capital Inicial: "<<endl;
-    cin>> capital;
-    cout<<"Insertar la Tasa de Interes: "<<endl;
-    cin>> tasainteres;
-    cout<<"Insertar el tiempo: "<<endl;
-    cin>> tiempo;
-    resultado = pow(1+tasainteres,tiempo)*capital;
-    cout<<"--------------------------------"<<endl;
-    cout<<"El resultado es: "<<resultado<<endl;
-    cout<<"--------------------------------";
+    
+    cout << "--------------------------------" << endl;
+    cout << "Calculadora de Interes Compuesto" << endl;
+    cout << "--------------------------------" << endl;
+    
+    cout << "Insertar el Capital Inicial: ";
+    cin >> capital;
+    cout << "Insertar la Tasa de Interes: ";
+    cin >> tasainteres;
+    cout << "Insertar el tiempo: ";
+    cin >> tiempo;
+    
+    resultado = ( pow( 1 + tasainteres, tiempo )* capital ) - capital;
+    
+    cout << "--------------------------------"<< endl;
+    cout << "El resultado es: " << resultado << endl;
+    cout << "--------------------------------";
 
     return 0;
 }
