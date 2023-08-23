@@ -29,9 +29,6 @@ int main()
 
             cout << "X1 = " << x1 << endl;
             cout << "X2 = " << x2 << endl;
-
-        }
-    }
     }
     return 0;
 }
