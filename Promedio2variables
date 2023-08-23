@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float n1, n2, promedio;
+    
+    cout << "-------------------------------------------" << endl;
+    cout << "Calculadora de promedio con 2 variables" << endl;
+    cout << "-------------------------------------------" << endl;
+    
+    cout << "Ingresar numero 1: ";
+    cin >> n1;
+    
+    cout << "Ingresar numero 2: ";
+    cin >> n2;
+    
+    promedio = n1 + n2;
+    
+    cout << "Ingresar numero 3: ";
+    cin >> n1;
+    
+    cout << "Ingresar numero 4: ";
+    cin >> n2;
+    
+    promedio = promedio + n1 + n2;
+    
+    cout << "Ingresar numero 5: ";
+    cin >> n1;
+    
+    promedio = ( promedio + n1 ) / 5;
+    
+    cout << "El resultado es: " << promedio;
+
+    return 0;
+}
