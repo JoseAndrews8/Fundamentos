@@ -35,7 +35,5 @@ int main()
             cout << "X2 = " << x2 << endl;
 
         }
-    }
-    }
     return 0;
 }
