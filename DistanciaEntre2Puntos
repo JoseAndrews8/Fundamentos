@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    double x1, y1, x2, y2, distancia;
+    
+    cout << "Ingresar los puntos X1, Y1: ";
+    cin >> x1 >> y1;
+    
+    cout << "Ingresar los puntos X2, Y2: ";
+    cin >> x2 >> y2;
+    
+    distancia = sqrt ( pow( x2 - x1,2) +  pow( y2 - y1,2) );
+    
+    cout << "----------------------------------------------------------------------------" << endl;
+    cout << "La distancia entre los puntos (" << x1 << "," << y1 <<") (" << x2 << "," << y2 <<") " << "es de: " << distancia << "cm." << endl;
+    cout << "----------------------------------------------------------------------------";
+
+    return 0;
+}
