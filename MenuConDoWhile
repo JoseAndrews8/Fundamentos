@@ -1,0 +1,66 @@
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+    int operacion;
+    float a, b, resultado;
+    
+    do {
+        cout << "Ingresar primer numero: ";
+        cin >> a;
+    
+        cout << "Ingresar segundo numero: ";
+        cin >> b;
+    
+    
+        cout << "-------MENU-------" << endl;
+        cout << "1.- Suma" << endl;
+        cout << "2.- Resta" << endl;
+        cout << "3.- Multiplicacion" << endl;
+        cout << "4.- Division" << endl;
+        cout << "0.- Salir" << endl;
+        cout << "------------------" << endl;
+    
+        cout <<endl;
+    
+        cout << "Seleccionar operacion: ";
+        cin >> operacion;
+    
+        cout <<endl;
+    
+        switch (operacion) {
+            case 1:
+                cout << "Elegiste Suma" << endl;
+                resultado = a + b;
+                break;
+            case 2:
+                cout << "Elegiste Resta" << endl;
+                resultado = a - b;
+                break;
+            case 3:
+                cout << "Elegiste Multiplicacion" << endl;
+                resultado = a * b;
+                break;
+            case 4:
+                cout << "Elegiste Division" << endl;
+                resultado = a / b;
+                break;
+            case 0:
+                cout << "Salir" << endl;
+                break;
+            default:
+                cout << "Opcion Invalida." << endl;
+        }
+    
+        if (operacion > 0 && operacion < 5) 
+            cout << "--------------------------" << endl;
+            cout << "El resultado es: " << resultado << endl;
+            cout << "--------------------------" << endl;
+         
+        } while ( operacion != 0 );
+        return 0;
+     
+} 
