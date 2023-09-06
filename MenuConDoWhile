@@ -55,11 +55,12 @@ int main()
                 cout << "Opcion Invalida." << endl;
         }
     
+        if (operacion != 0) {
         if (operacion > 0 && operacion < 5) 
             cout << "--------------------------" << endl;
             cout << "El resultado es: " << resultado << endl;
             cout << "--------------------------" << endl;
-         
+        }
         } while ( operacion != 0 );
         return 0;
      
