@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int cantidad, camisa = 50;
+    float total, descuento;
+    
+    cout << "Ingresar la cantidad de camisas: ";
+    cin >> cantidad;
+    
+    if (cantidad >= 3) {
+        total = cantidad * camisa;
+        descuento = total * 0.2;
+        total = total - descuento;
+    } 
+    
+    if (cantidad < 3) {
+        total = cantidad * camisa;
+        descuento = total * 0.1;
+        total = total - descuento;
+    }
+
+    cout << "El precio total es: " << total;
+    return 0;
+}
