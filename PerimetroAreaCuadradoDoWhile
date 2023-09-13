@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float lado, perimetro, area;
+    
+    do {
+    cout << "Ingresar un lado del cuadrado: ";
+    cin >> lado;
+    } while (lado <= 0);
+    perimetro = lado + lado + lado + lado;
+    area = lado * lado;
+    
+    cout << "El perimetro es: " << perimetro << endl;
+    cout << "El area es: " << area;
+    
+
+    return 0;
+}
