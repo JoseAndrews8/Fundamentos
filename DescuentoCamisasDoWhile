@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int cantidad, camisa = 50;
+    float total, descuento;
+    
+    do {
+    cout << "Ingresar la cantidad de camisas: ";
+    cin >> cantidad;
+    } while (cantidad <= 0);
+    
+    if (cantidad >= 3) {
+        total = cantidad * camisa;
+        descuento = total * 0.2;
+        total = total - descuento;
+    } 
+    
+    if (cantidad < 3) {
+        total = cantidad * camisa;
+        descuento = total * 0.1;
+        total = total - descuento;
+    }
+
+    cout << "El precio total es: " << total;
+    return 0;
+}
