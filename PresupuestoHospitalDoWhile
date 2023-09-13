@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float presupuesto, g, t, p;
+    
+    do {
+    cout << "Ingresar el presupuesto del hospital: ";
+    cin >> presupuesto;
+    } while (presupuesto <= 0);
+    
+    g = presupuesto * 0.4;
+    t = presupuesto * 0.3;
+    p = presupuesto * 0.3;
+    
+    cout << "El presupuesto por ginecologia es: " << g << "Bs." << endl;
+    cout << "El presupuesto por traumatologia es: " << t << "Bs." << endl;
+    cout << "El presupuesto por pediatria es: " << p << "Bs." << endl;
+    
+
+    return 0;
+}
