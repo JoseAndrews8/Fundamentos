@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int i, N, signo = 1, F = 1; 
-    float X, acum = 1;
+    float X, acum = 0;
 
     
     do {
@@ -24,7 +24,7 @@ int main()
         acum = acum + signo * pow( X, i) / F;
         signo = -signo;
     }
-    cout << "La sumatoria es: " << acum - 1;
+    cout << "La sumatoria es: " << acum;
 
     return 0;
 }
