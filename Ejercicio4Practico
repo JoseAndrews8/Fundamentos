@@ -17,7 +17,7 @@ int main()
         signo = -signo;
     }
     
-    cout << "La sumatoria es: " << acum - 1;
+    cout << "La sumatoria es: " << acum;
 
     return 0;
 }
