@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int N, i = 1, signo = 1, acum = 1; 
+    int N, i = 1, signo = 1, acum = 0; 
     
     do {
         cout << "Ingrese el numero de elementos: ";
