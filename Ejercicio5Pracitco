@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i, N, acum = 1; //acumulador en 1 porque es el neutro de la multiplicacion
+
+    //Validar los datos de entrada
+    do {
+        cout << "Ingrese el numero de elementos: ";
+        cin >> N;
+    } while (N < 0); //validar el ingreso de N
+    
+    for (i = 2; i <= N; i++)
+        acum = acum * i;
+    cout << "El factorial de " << N << "es: " << acum;
+
+    return 0;
+}
