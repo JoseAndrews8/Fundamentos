@@ -1,0 +1,90 @@
+#include <iostream>
+
+using namespace std;
+
+int Factorial(int n);
+int SumaFactorial(int n);
+int Digito(int n);
+
+int main()
+{
+    int n, operacion, resultado;
+
+    do {
+        cout << "Ingresar un numero: ";
+        cin >> n;
+
+        cout << endl;
+
+        cout << "MENU" << endl;
+        cout << "1.- Factorial" << endl;
+        cout << "2.- Suma de Factoriales" << endl;
+        cout << "3.- Digito" << endl;
+        cout << "0.- Salir" << endl;
+
+        cout << endl;
+
+        cout << "Seleccionar operacion: ";
+        cin >> operacion;
+
+        cout << endl;
+
+        switch (operacion) {
+        case 1:
+            cout << "Elegiste Factorial" << endl;
+            resultado = Factorial(n);
+            break;
+        case 2:
+            cout << "Elegiste Suma de Factoriales" << endl;
+            resultado = SumaFactorial(n);
+            break;
+        case 3:
+            cout << "Elegiste Digito" << endl;
+            resultado = Digito(n);
+            break;
+        case 0:
+            cout << "Salir" << endl;
+            return 0;
+            break;
+        default:
+            cout << "Opcion Invalida." << endl;
+        }
+
+        if (operacion != 0) {
+            if (operacion > 0 && operacion < 5)
+                cout << "--------------------------" << endl;
+            cout << "El resultado es: " << resultado << endl;
+            cout << "--------------------------" << endl;
+        }
+    } while (operacion != 0);
+}
+
+int Factorial(int n)
+{
+    int acum = 1;
+    for (int i = 1; i <= n; i++)
+        acum = acum * i;
+
+    return acum;
+}
+
+int SumaFactorial(int n)
+{
+    int acum = 0;
+    for (int i = 1; i <= n; i++)
+        acum = acum +  i;
+
+    return acum;
+}
+
+
+int Digito(int n)
+{
+    int suma = 0;
+    while (n > 0) {
+        suma += n % 10;
+        n /= 10;
+    }
+    return suma;
+}
+
