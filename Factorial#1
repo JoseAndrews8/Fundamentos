@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int factorial(int numero);
+
+int main()
+{
+    int n;
+
+    cout << "Ingresar N: ";
+    cin >> n;
+
+    cout << "El factorial de " << n << " es: " << factorial(n);
+
+}
+    int factorial(int numero)
+    {
+        int acum = 1;
+
+        for (int i = 1; i <= numero; i++)
+
+            acum = acum * i;
+       
+        return acum;
+
+    }
