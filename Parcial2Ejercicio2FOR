@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int num;
+	float precio, descuento, preciofinal, suma = 0;
+
+	cout << "Ingresar el numero de productos: ";
+	cin >> num;
+
+	for (int i = 1; i <= num; i++)
+	{
+		cout << "Introduzca el precio : ";
+		cin >> precio;
+
+		cout << "El porcentake de descuento es: ";
+		cin >> descuento;
+
+		preciofinal = precio - (precio * (descuento / 100));
+		suma += preciofinal;
+
+		cout << "El precio final con descuento es: " << preciofinal << endl;
+	}
+
+	cout << "El monto total es: " << suma;
+
+	return 0;
+}
