@@ -1,0 +1,82 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std; 
+
+string ingresarNombreProducto();
+double ingresarMontoVenta();
+void agregarVenta(vector<string>& nombresProductos, vector<double>& ventas);
+double calcularVentasTotales(const vector<double>& ventas);
+
+int main() {
+    vector<string> nombresProductos;
+    vector<double> ventas;
+
+    while (true) {
+        cout << "Menu de opciones:" << endl;
+        cout << "1. Registrar una venta" << endl;
+        cout << "2. Calcular ventas totales" << endl;
+        cout << "3. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+
+        int opcion;
+        while (!(cin >> opcion) || (opcion < 1 || opcion > 3)) {
+            cout << "Opcion invalida. Seleccione una opcion valida: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+
+        switch (opcion) {
+        case 1:
+            agregarVenta(nombresProductos, ventas);
+            break;
+        case 2:
+            cout << "Ventas totales: $" << calcularVentasTotales(ventas) << endl;
+            break;
+        case 3:
+            cout << "Saliendo del programa." << endl;
+            return 0;
+        }
+    }
+
+    return 0;
+}
+string ingresarNombreProducto() {
+    string nombre;
+    cout << "Ingrese el nombre del producto: ";
+    cin >> nombre;
+    return nombre;
+}
+
+
+double ingresarMontoVenta() {
+    double monto;
+    cout << "Ingrese el monto de la venta: ";
+    while (!(cin >> monto) || monto < 0) {
+        cout << "Monto invalido. Ingrese un monto positivo: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    return monto;
+}
+
+
+void agregarVenta(vector<string>& nombresProductos, vector<double>& ventas) {
+    string nombreProducto = ingresarNombreProducto();
+    double montoVenta = ingresarMontoVenta();
+
+    nombresProductos.push_back(nombreProducto);
+    ventas.push_back(montoVenta);
+
+    cout << "Venta registrada con exito." << endl;
+}
+
+
+double calcularVentasTotales(const vector<double>& ventas) {
+    double ventasTotales = 0.0;
+    for (double venta : ventas) {
+        ventasTotales += venta;
+    }
+    return ventasTotales;
+}
