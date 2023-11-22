@@ -1,0 +1,212 @@
+#include <iostream>
+#include <string>
+#define MAX 1000
+
+
+using namespace std;
+
+struct usuario {
+    string id;
+    string password;
+    bool isPremium;
+};
+
+usuario V[MAX];
+
+const string admin_id = "adrian";
+const string admin_contra = "12345";
+
+void procesarPago(usuario& user);
+void menuPostLogin(usuario& user);
+void menuUsuarioPremium(usuario& user);
+bool iniciarsesion();
+void registrarse();
+bool existeUsuario(const string& nombre);
+void administradores();
+void menuAdmin();
+
+int contuser = 1;
+
+int main()
+{
+    int opcion, opcion1;
+
+    administradores();
+
+    do {
+        cout << "-------MATERNITY-------" << endl;
+        cout << "[1] Iniciar sesion" << endl;
+        cout << "[2] Registrarse" << endl;
+        cout << "[0] SALIR" << endl;
+        cout << "-----------------------" << endl;
+        cout << endl;
+        cout << "Elegir una opcion: ";
+        cin >> opcion;
+        system("cls");
+        switch (opcion) {
+        case 1: iniciarsesion();
+            break;
+        case 2: registrarse();
+            break;
+        case 0: cout << "SALISTE" << endl;
+            return 0;
+            break;
+        default: cout << "opcion invalida" << endl;
+        }
+    } while (opcion != 0);
+
+    return 0;
+}
+
+bool iniciarsesion() {
+    string nombre, contra;
+    cout << "Ingresar id: ";
+    cin >> nombre;
+    cout << "Ingresar contraseña: ";
+    cin >> contra;
+    for (int i = 0; i < contuser; i++) {
+        if (V[i].id == nombre && V[i].password == contra) {
+            system("cls");
+            if (i == 0) {
+                cout << "Bienvenido ADMIN" << endl;
+                menuAdmin();
+            }
+            else {
+                cout << "Inicio de sesión exitoso." << endl;
+                menuPostLogin(V[i]);
+                return true;
+            }
+        }
+    }
+    system("cls");
+    cout << "Nombre de usuario o contraseña incorrectos." << endl;;
+    return false;
+
+
+}
+void registrarse() {
+    string nombre, contra;
+    cout << "-------MATERNITY-------" << endl;
+    cout << "Crea un id para tu usuario: ";
+    cin >> nombre;
+    if (existeUsuario(nombre)) {
+        cout << "El nombre de usuario ya está en uso. Por favor, elige otro." << endl;
+        return;
+    }
+    cout << "Crea una contraseña: ";
+    cin >> contra;
+    if (contra.length() < 8){
+        cout << "La contraseña debe tener mas de 8 caracteres" << endl;
+        return;
+    }
+
+    V[contuser].id = nombre;
+    V[contuser].password = contra;
+    V[contuser].isPremium = false;
+    contuser++;
+    system("cls");
+    cout << "Usuario registrado exitosamente.\n";
+}
+bool existeUsuario(const string& nombre) {
+    for (int i = 0; i < contuser; i++) {
+        if (V[i].id == nombre) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void menuPostLogin(usuario& user) {
+    if (user.isPremium) {
+        menuUsuarioPremium(user);
+    }
+    else {
+
+        int opcion;
+        cout << "Bienvenido, " << user.id << endl;
+        cout << "-------------------------" << endl;
+        cout << "[1] Usar plan premium" << endl;
+        cout << "[2] Usar plan gratuito" << endl;
+        cout << "-------------------------" << endl;
+        cout << "Elegir una opcion: ";
+        cin >> opcion;
+        system("cls");
+        switch (opcion) {
+        case 1:
+            cout << "Aún no eres usuario premium. ¿Deseas comprar el plan premium? (1: Sí, 2: No): ";
+            int compra;
+            cin >> compra;
+            if (compra == 1) {
+                procesarPago(user);
+            }
+            break;
+        case 2:
+            cout << "Estás usando el plan gratuito con limitaciones." << endl;
+            break;
+        default:
+            cout << "Opción inválida." << endl;
+        }
+    }
+}
+
+void menuUsuarioPremium(usuario& user) {
+    system("cls");
+    cout << "Bienvenido al menú premium, " << user.id << endl;
+    // MENU PREMIUM
+    cout << "-----------------------------------------------------" << endl;
+    cout << "MENU" << endl;
+}
+
+void procesarPago(usuario& user) {
+    int metodoPago;
+    cout << "Elegir método de pago:" << endl;
+    cout << "1. Tarjeta de crédito/débito" << endl;
+    cout << "2. PayPal" << endl;
+    cout << "3. Otro" << endl;
+    cin >> metodoPago;
+
+    switch (metodoPago) {
+    case 1: {
+        string numeroTarjeta, fechaExpiracion, cvv;
+        do {
+        cout << "Ingresar número de tarjeta: ";
+        cin >> numeroTarjeta;
+        if (numeroTarjeta.length() != 16) {
+            cout << "Numero de tarjeta invalido" << endl;
+        }
+        } while (numeroTarjeta.length() != 16);
+        cout << "Ingresar fecha de expiración (MM/AA): ";
+        cin >> fechaExpiracion;
+        cout << "Ingresar CVV: ";
+        cin >> cvv;
+        cout << "Procesando pago..." << endl;
+        user.isPremium = true;
+        cout << "Pago realizado con éxito. Ahora eres usuario premium." << endl;
+        break;
+    }
+    case 2:
+        cout << "Procesando pago con PayPal..." << endl;
+        user.isPremium = true;
+        cout << "Pago realizado con éxito. Ahora eres usuario premium." << endl;
+        break;
+    case 3:
+        cout << "Procesando otro método de pago..." << endl;
+        user.isPremium = true;
+        cout << "Pago realizado con éxito. Ahora eres usuario premium." << endl;
+        break;
+    default:
+        cout << "Método de pago inválido." << endl;
+    }
+    if (user.isPremium) {
+        menuUsuarioPremium(user);
+    }
+}
+void administradores() {
+    V[0].id = admin_id;
+    V[0].password = admin_contra;
+}
+void menuAdmin(){
+    int hola;
+    cout << "hola";
+    cin >> hola;
+}
